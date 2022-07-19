@@ -1,14 +1,12 @@
 import React from "react";
-import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, Text} from 'react-native';
 
 const ListItem = ({el, deleteHandler}) => {
 
     return (
-        <View>
-            <TouchableOpacity onPress={() => deleteHandler(el.key)}>
-                <Text style={styles.text}>{el.text}</Text>
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity onPress={() => deleteHandler(el.id)}>
+            <Text style={styles.text}>{el.text}</Text>
+        </TouchableOpacity>
     );
 }
 
@@ -23,6 +21,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#fafafa",
         borderWidth: 1,
         width: "80%",
-        marginLeft: "20%",
+        marginHorizontal: "10%",
     }
 });

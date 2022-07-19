@@ -11,7 +11,7 @@ const Form = ({addHandler}) => {
     return (
         <View>
             <TextInput style={styles.input} onChangeText={onChange} placeholder="Впишите задачу"/>
-            <Button color='green' onPress={() => addHandler(text)} title='Добавить задачу'/>
+            <Button color="green" onPress={() => addHandler(text)} title='Добавить задачу'/>
         </View>
     )
 }

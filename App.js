@@ -22,22 +22,21 @@ const App = () => {
             ]
         })
     }
-    const deleteHandler = (key) => {
+    const deleteHandler = (id) => {
         setListOfItems((list) => {
-            return list.filter(listOfItems => listOfItems.key !== key)
+            return list.filter(listOfItems => listOfItems.id !== id)
         })
     }
 
     return (
         <View style={styles.container}>
-            <Header>
-                <Form addHandler={addHandler}/>
-                <View>
-                    <FlatList data={listOfItems} renderItem={({item}) => (
-                        <ListItem deleteHandler={deleteHandler} el={item}/>
-                    )}/>
-                </View>
-            </Header>
+            <Header />
+            <Form addHandler={addHandler}/>
+            <View>
+                <FlatList data={listOfItems} renderItem={({item}) => (
+                    <ListItem deleteHandler={deleteHandler} el={item}/>
+                )}/>
+            </View>
             <StatusBar style="auto"/>
         </View>
     );
